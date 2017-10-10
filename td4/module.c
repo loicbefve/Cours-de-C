@@ -58,10 +58,7 @@ tabInt* initTabFromSize( int taille ){
 }
 
 tabInt* initTabFromString( char *s ){
-  int taille = 0;
-  while( s[taille] != '\0'){
-      taille++;
-  }
+  int taille = longueur(s);
   tabInt *res = initTabFromSize(taille);
   for(int i = 0 ; i<taille ; i++){
     char c = s[i];
@@ -77,8 +74,23 @@ void printTab ( tabInt *tab ){
   printf("\n");
 }
 
-void sommeTableauSame( tabInt *tab1 , tabInt *tab2 , tabInt *result ){
-  for( int i = 0 ; i < tab1->taille ; i++){
-    result->tableau[i] = tab1->tableau[i] + tab2->tableau[i];
+tabInt* add( tabInt* tab1, tabInt* tab2){
+  int taille = tab1->taille;
+  tabInt *tabRes = initTabFromSize(taille+1);
+  int indiceFin = taille-1;
+  int retenue = 0 , sommeDigit = 0;
+  for(int i=0 ; i<taille ; i++){
+    sommeDigit = tab1->tableau[indiceFin] + tab2->tableau[indiceFin] + retenue;
+    retenue = 0;
+    if(sommeDigit >= 10){
+      tabRes->tableau[indiceFin+1] = sommeDigit - 10;
+      retenue = 1;
+    }
+    else{
+      tabRes->tableau[indiceFin+1] = sommeDigit;
+    }
+    indiceFin--;
   }
+  tabRes->tableau[0] = retenue;
+  return tabRes;
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include <stdio.h>
+#include <stdlib.h>
 
 //Struct
 typedef struct tabInt tabInt;
@@ -14,5 +15,5 @@ int longueur( char* chaine );
 int isPalindrome( char* s );
 tabInt* initTabFromSize( int taille );
 tabInt* initTabFromString( char s[] );
-void sommeTableauSame( tabInt *tab1 , tabInt *tab2 , tabInt *result );
 void printTab ( tabInt *tab );
+tabInt* add( tabInt* tab1, tabInt* tab2);

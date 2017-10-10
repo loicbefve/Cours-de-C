@@ -30,8 +30,16 @@ int main(int argc, char const *argv[]) {
 
   /* Exercice 5 */
   printf("------Exercice5------\n\n");
-  tabInt *tab1=initTabFromString("123455475993");//, *tab2=initTabInt(3), *tabRes=initTabInt(3);
-  printTab(tab1);
+  char nombre1[] = "12";
+  char nombre2[] = "09";
+  printf( "Je fait l'addition: %s + %s\n" , nombre1 , nombre2 );
+  //Utilisation de lastructure adéquate
+  tabInt *tab2 = initTabFromString(nombre1);
+  tabInt *tab3 = initTabFromString(nombre2);
+  //Calcul du résultat
+  tabInt *tabRes = add( tab2 , tab3);
+  printf("Le résultat est: ");
+  printTab(tabRes);
 
 
   return 0;
