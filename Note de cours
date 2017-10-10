@@ -1,0 +1,91 @@
+Pile:
+
+Le programme utilise la pile pour stocker de l'information
+On peut représenté la pile du haut vers le bas
+Si on défini int a = 5 le programme stocke 5 en haut de la pile
+Quand on passe un paramètre, on recopie la valeur dans le paramètre de la fonction
+La fonction main se réserve une case dans la pile pour récupéré ce que retourne la fonction
+Schéma dans callepin
+
+Pointeurs:
+
+Chaque case de la pile à une adresse. 
+Pour connaître l'adresse d'une variable a par exemple on fait "&a"
+Pour stocker une adresse dans une variable on fait "int* b = &a". = pointeur vers l'adresse d'un int
+Si on veut stocker la valeur de l'adresse d'une case contenant par exemple un char on fait "char* p = &c"ype
+Pour récupérer la valeur du pointeur on fait *pointeur
+
+	Donc on a:
+
+	l'adresse d'une variable est &a
+	on peut stocker cette adresse dans un pointeur: type* pointeur = &variable
+	pour récupérer la valeur de ce que pointe le pointeur: *pointeur
+
+
+	Arithmétique des pointeur:
+		
+		malloc permet de réserver des cases mémoire
+		malloc(100) réserve 100 cases de char (important) et retourne l'adresse du début de la zone
+		si on veut stocker 100 int par exemple il faut faire "malloc(100 * sizeof(int))"
+		
+		Donc pointeur vers tableau de char "char* p = malloc(100)"
+				   tableau de int  "int* p = malloc(100 * sizeof(int))"
+
+		Pour remplir le tableau *q = 1
+					*(q+1) = 5  mettre le q+1 entre parenthèse permet de géré la size du type si bien déclaré
+
+					...
+					
+		Le malloc n'est pas pris de la pile mais du tas qui est bien plus gros
+
+		l'intêret des tableaux en pointeur est que l'on peut créer un tableau d'un nombre de case calculé par une autre fonction tandis que int t[] doit prendre un nombre fixe
+
+		realloc permet de demander une zone plus grande dans lequel il met les valeurs déjà rentrée dans l'ancienne zone
+		calloc donne une zone initialisé à 0
+		
+
+Type de données:
+
+
+	Exemple: type fraction
+	Format:
+
+//définition de la structure 
+struct fraction{
+	int num;
+	int den;
+}
+
+Lorsque l'on utilise des structure, jamais dans la pile
+
+//création d'une instance fraction
+struct fraction* pf = malloc ( sizeof( Struct fraction ) ) ;
+//pf est un pointeur sur une zone mémoire de grandeur nécéssaire à une fraction
+
+(*pf).num = 3;
+(*pf).den = 7;
+pour remplir notre structure
+
+équivalent à 
+
+pf->num = 3
+pf->den = 7
+
+le Struct fraction est un peu lourd mais on peux utiliser typedef pour faire
+
+/////////////////////////////////////////////////////////
+typedef struct _fraction{
+	int num;
+	int den;
+	} fraction;
+
+fraction* pf = malloc( sizeof(fraction) );
+pf->num = 5;
+pf->den = 7;
+////////////////////////////////////////////////////////
+
+
+
+
+
+
