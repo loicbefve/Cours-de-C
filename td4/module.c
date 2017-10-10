@@ -7,7 +7,7 @@ int longueur( char* chaine ){
     compt++;
     valeur = *(chaine+compt);
   }
-  return compt+1;
+  return compt;
 }
 
 int compare ( char* chaine1 , char* chaine2 ){
@@ -42,11 +42,9 @@ int isPalindrome( char* s ){
   int moitie = taille/2;
   int indexFin = taille-1;
   for( int i = 0 ; i < moitie ; i++){
-    printf("%d,%d",i,indexFin);
     if( s[i] != s[indexFin]){
       return 0;
     }
-    i++;
     indexFin--;
   }
   return 1;
