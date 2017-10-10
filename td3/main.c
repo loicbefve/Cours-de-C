@@ -17,10 +17,6 @@ int main(int argc, char const *argv[]) {
   comptUn = bitAun(d);
   printf("Dans %d il y a %d bits à 1\n", d , comptUn);
 
-  tabInt *tab1=initTabFromString("123455475993");//, *tab2=initTabInt(3), *tabRes=initTabInt(3);
-
-  printTab(tab1);
-
 //  int tab2[] = {2,3,4,5};
 //  int resultat[4];
 //  sommeTableauSame(tab1,tab2,resultat,4);

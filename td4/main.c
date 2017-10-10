@@ -30,7 +30,8 @@ int main(int argc, char const *argv[]) {
 
   /* Exercice 5 */
   printf("------Exercice5------\n\n");
-  
+  tabInt *tab1=initTabFromString("123455475993");//, *tab2=initTabInt(3), *tabRes=initTabInt(3);
+  printTab(tab1);
 
 
   return 0;
