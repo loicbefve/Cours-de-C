@@ -30,7 +30,7 @@ int main(int argc, char const *argv[]) {
 
   /* Exercice 5 */
   printf("------Exercice5------\n\n");
-  char nombre1[] = "12";
+  char nombre1[] = "1200000";
   char nombre2[] = "09";
   printf( "Je fait l'addition: %s + %s\n" , nombre1 , nombre2 );
   //Utilisation de lastructure adéquate

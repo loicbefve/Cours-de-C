@@ -75,7 +75,14 @@ void printTab ( tabInt *tab ){
 }
 
 tabInt* add( tabInt* tab1, tabInt* tab2){
-  int taille = tab1->taille;
+  int taille1 = tab1->taille;
+  int taille2 = tab2->taille;
+  int taille = 0;
+  if(taille1<=taille2){
+      taille = taille2;
+  } else{
+    taille = taille1;
+  }
   tabInt *tabRes = initTabFromSize(taille+1);
   int indiceFin = taille-1;
   int retenue = 0 , sommeDigit = 0;
