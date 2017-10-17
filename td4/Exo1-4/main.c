@@ -27,20 +27,3 @@ int main(int argc, char const *argv[]) {
   printf("------Exercice4------\n\n");
   int isPal = isPalindrome("baoboab");
   printf("%s est il un palindrome? :%d\n\n", "baoboab" , isPal );
-
-  /* Exercice 5 */
-  printf("------Exercice5------\n\n");
-  char nombre1[] = "1200000";
-  char nombre2[] = "09";
-  printf( "Je fait l'addition: %s + %s\n" , nombre1 , nombre2 );
-  //Utilisation de lastructure adéquate
-  tabInt *tab2 = initTabFromString(nombre1);
-  tabInt *tab3 = initTabFromString(nombre2);
-  //Calcul du résultat
-  tabInt *tabRes = add( tab2 , tab3);
-  printf("Le résultat est: ");
-  printTab(tabRes);
-
-
-  return 0;
-}
